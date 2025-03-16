@@ -4,7 +4,7 @@
         "vscode": {
             "extensions": [
                 "ms-python.python",
-                "lostintangent.vsls-gitdoc"
+                "jonathan-carter.gitdoc"
             ]
         }
     },
