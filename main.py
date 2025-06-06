@@ -14,9 +14,14 @@ def cards():
     
     return deck
 
-def deal_cards():
+def deal_cards_start(deck):
     hand = []
-    
+    card = ''
+    for i in range(2):
+        rand_index = random.randint(0,len(deck) - 1)
+       card = hand.append(deck[rand_index])
+    print(hand)
+    return hand
     pass
 
 def count_cards():
@@ -38,4 +43,5 @@ def dealer_hit_or_stand():
     pass
 
 def start():
-    deal_cards()   
+    cards()
+    deal_cards_start()  
