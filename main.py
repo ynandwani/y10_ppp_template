@@ -1,4 +1,5 @@
 # testing
+
 from random import randint
 from time import sleep
 
@@ -42,15 +43,22 @@ def count_cards(hand):
     return hand_total
 
 
-def hand_next(hand_total, deal_cards):
-    hit_or_stand = input(f"Your hand is: {hand_total}. Do you hit or stand?).lower()
+def hand_next(hand_total):
+    hit_or_stand = input(f"Your hand is: {hand_total}. Do you hit or stand?").lower()
     while hit_or_stand == 'hit':
-        
-        
-    pass
+            hit()
+            hit_or_stand = input(f"Your hand is: {hand_total}. Do you hit or stand?").lower()
+    if hit_or_stand == 'stand':
+        stand()
+    while hit_or_stand != 'hit' or  hit_or_stand != 'stand':
+        print("Please try again:")
+        hit_or_stand = input(f"Your hand is: {hand_total}. Do you hit or stand?").lower()
+   
+    return hit_or_stand 
 
-def hit():
-    pass
+def hit(hand_total, deck):
+    
+
 def stand():
     pass
 
@@ -71,4 +79,5 @@ def start():
     deal_cards_start() 
     count_cards()
     hand_next()
+ 
  
