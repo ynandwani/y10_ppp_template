@@ -41,7 +41,12 @@ def count_cards(hand):
     print(f"Your total is: {hand_total}.")
     return hand_total
 
-def hand_next()
+
+def hand_next(hand_total, deal_cards):
+    hit_or_stand = input(f"Your hand is: {hand_total}. Do you hit or stand?).lower()
+    while hit_or_stand == 'hit':
+        
+        
     pass
 
 def hit():
