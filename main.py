@@ -19,8 +19,8 @@ def deal_cards_start(deck):
     hand = []
     card_1 = ''
     card_2 = ''
-    card_1 = random.randint(0,len(deck) - 1)
-    if card_1 == 'king' or card == 'queen' or card == 'jack':
+    card_1 = randint[(0,len(deck) - 1)]
+    if card_1 == 'king' or card_1 == 'queen' or card_1 == 'jack':
         card_1 = 10
     elif card_1 =='ace':
         card_1 = 11
@@ -28,6 +28,15 @@ def deal_cards_start(deck):
         deck.remove[card_1]
     else:
         hand.append(deck[card_1])
+    
+    if card_2 == 'king' or card_2 == 'queen' or card_2 == 'jack':
+        card_2 = 10
+    elif card_2 =='ace':
+        card_2 = 11
+        hand.append(deck[card_2])
+        deck.remove[card_2]
+    else:
+        hand.append(deck[card_2])
 
 
     print(f"Your hand is: {hand}")
@@ -37,8 +46,11 @@ def count_cards(hand):
     hand_total = 0
     index = 0
     for i in range(len[hand] - 1):
-      hand_total += hand(index) 
-      index += 1
+            hand_total += hand(index) 
+            index += 1
+    if 11 in hand and hand_total > 10:
+        hand -= 10
+
     print(f"Your total is: {hand_total}.")
     return hand_total
 
@@ -57,6 +69,21 @@ def hand_next(hand_total):
     return hit_or_stand 
 
 def hit(hand_total, deck):
+    card = deck[randint(0,len(deck) - 1)]
+
+    if card == 11 and hand_total > 10:
+        card = 1
+    
+    hand_total = hand_total + card
+    if card == 'king' or card == 'queen' or card == 'jack':
+        card = 10
+    elif card =='ace':
+        card = 11
+        hand_total = hand_total + card
+        deck.remove[card]
+    else:
+        hand_total = hand_total + card
+    
     
 
 def stand():
