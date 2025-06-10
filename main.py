@@ -3,7 +3,12 @@
 from random import randint
 from time import sleep
 
-print("Revision Blackjack")
+welcome = 'Revision Blackjack'
+index = 0
+for i in range(len(welcome)):
+    print(welcome[index])
+    index += 1
+    sleep(0.2)
 
 def cards():
     deck = []
@@ -99,6 +104,7 @@ def hit(hand_total, deck):
 
 def stand(hand_total):
     print(f"Your hand is: {hand_total}")
+    dealer_deal_cards()
 
 
 def double_down():
