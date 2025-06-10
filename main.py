@@ -2,6 +2,7 @@
 
 from random import randint
 from time import sleep
+import os
 
 welcome = 'Revision Blackjack'
 index = 0
@@ -118,7 +119,7 @@ def hit(hand_total, deck):
 
 def stand(hand_total):
     print(f"Your hand is: {hand_total}")
-    dealer_deal_cards()
+    
 
 
 def double_down():
@@ -165,7 +166,7 @@ def dealer_hit(dealer_hand_total, deck):
             dealer_hand_total = dealer_hand_total + card
     else:
         dealer_bust()
-        
+
     return dealer_hand_total
     
 def who_won(dealer_hand_total, hand_total):
@@ -181,13 +182,27 @@ def who_won(dealer_hand_total, hand_total):
     else:
         print("Push!")
         start()
-
+def clear_terminal():
+    # For Windows
+    if os.name == 'nt':
+        os.system('cls')
+    else:
+        os.system('clear')
 
 def start():
-    cards()
-    deal_cards_start()
-    count_cards()
-    dealer_deal_cards()
-    hand_next()
+    play = input("Press Y to play. Otherwise, press N.").lower()
+    if play == 'y':
+        cards()
+        deal_cards_start()
+        count_cards()
+        dealer_deal_cards()
+        hand_next()
+        dealer_hit_or_stand()
+        dea
+    else:
+        print("See you next time!")
+        sleep(3)
+        clear_terminal()
+    
     
  
