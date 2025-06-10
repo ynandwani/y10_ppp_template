@@ -135,6 +135,7 @@ def hand_1(hand_1,deck):
     print(f"Your hand is: {hand_1}")
 
     hit_or_stand = input(f"Your hand is: {hand_1}. Do you hit or stand?").lower()
+
     while hit_or_stand == 'hit':
         if hand_1 > 22:
             player_bust()
@@ -155,25 +156,25 @@ def hand_1(hand_1,deck):
             print(hand_1)
             deck.remove[card]
             hit_or_stand = input(f"Your hand is: {hand_1}. Do you hit or stand?").lower()
-            
+
         
     while hit_or_stand == 'stand':
         if hand_1 > 22:
             player_bust()
         else: 
-            print(f"Your hand is: {hand_1}")  
+            print(f"Your hand is: {hand_1}")
+          
 
     else:
         print("Please try again:")
         hit_or_stand = input(f"Your hand is: {hand_1}. Do you hit or stand?").lower()
         card = deck[randint(0, len(deck) - 1)]    
 
+    who_won_split()
     
     return hit_or_stand 
 
     
-
-
 def hand_2(hand_2):
     hand_total = hand_2
     print(f"Your hand is: {hand_total}")
@@ -235,6 +236,9 @@ def who_won(dealer_hand_total, hand_total):
     else:
         print("Push!")
         start()
+
+def who_won_split():
+    pass # to do, find who won split with both hands, only one hand can win from the player so find which is closest to Blackjack 
 
 def clear_terminal():
     # For Windows
