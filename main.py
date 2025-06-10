@@ -134,6 +134,11 @@ def hand_1(hand_1):
     print(f"Your hand is: {hand_total}")
     hit()
 
+def hand_2(hand_2):
+    hand_total = hand_2
+    print(f"Your hand is: {hand_total}")
+    hit()
+
 def player_bust():
     print("You busted!!! Dealer wins.")
     start()
