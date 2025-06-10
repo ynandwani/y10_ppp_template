@@ -130,7 +130,8 @@ def split(hand):
     return hand_1, hand_2
 
 def hand_1(hand_1):
-    print(f"Your hand is: {hand_1}")
+    hand_total = hand_1
+    print(f"Your hand is: {hand_total}")
     hit()
 
 def player_bust():
