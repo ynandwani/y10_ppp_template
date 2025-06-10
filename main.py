@@ -54,7 +54,7 @@ def dealer_deal_cards(hand, hand_total):
     print(f"Dealer's first card is: {dealer_hand[0]}")
     count_cards()
     dealer_hand_total = hand_total
-    dealer_hit_or_stand()
+    
     
     return dealer_hand_total
 
@@ -177,6 +177,8 @@ def who_won(dealer_hand_total, hand_total):
 def start():
     cards()
     deal_cards_start()
-    
+    count_cards()
+    dealer_deal_cards()
+    hand_next()
     
  
