@@ -121,7 +121,6 @@ def stand(hand_total):
     print(f"Your hand is: {hand_total}")
     
 
-
 def double_down():
     pass
 
@@ -170,6 +169,8 @@ def dealer_hit(dealer_hand_total, deck):
     return dealer_hand_total
     
 def who_won(dealer_hand_total, hand_total):
+    print(f"Player's hand is: {hand_total}")
+    print(f"Dealer's hand is: {dealer_hand_total}")
     dealer = 21 - dealer_hand_total
     player = 21 - hand_total
 
@@ -182,6 +183,7 @@ def who_won(dealer_hand_total, hand_total):
     else:
         print("Push!")
         start()
+
 def clear_terminal():
     # For Windows
     if os.name == 'nt':
@@ -198,7 +200,7 @@ def start():
         dealer_deal_cards()
         hand_next()
         dealer_hit_or_stand()
-        dealer
+        
     else:
         print("See you next time!")
         sleep(3)
