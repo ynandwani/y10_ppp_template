@@ -149,8 +149,7 @@ def dealer_stand(dealer_hand_total):
 def dealer_hit(dealer_hand_total, deck):
     card = deck[randint(0, len(deck) - 1)]
 
-    while dealer_hand_total < 22:
-        
+    if dealer_hand_total < 22:
         if card == 'king' or card == 'queen' or card == 'jack':
             card = 10
             dealer_hand_total = dealer_hand_total + card
@@ -164,6 +163,7 @@ def dealer_hit(dealer_hand_total, deck):
             deck.remove[card]
         else:
             dealer_hand_total = dealer_hand_total + card
+        dealer_hit_or_stand()
     else:
         dealer_bust()
 
