@@ -95,7 +95,7 @@ def hand_next(hand_total):
         
         return hit_or_stand 
     else:
-        who_won()
+        player_bust()
 def hit(hand_total, deck):
     card = deck[randint(0,len(deck) - 1)]
 
@@ -127,6 +127,13 @@ def double_down():
 def split():
     pass
 
+def player_bust():
+    print("You busted!!! Dealer wins.")
+    start()
+
+def dealer_bust():
+    print("Dealer busted!!! Player wins.")
+    start()
 
 def dealer_hit_or_stand(dealer_hand_total):
     if dealer_hand_total >= 17:
@@ -156,7 +163,9 @@ def dealer_hit(dealer_hand_total, deck):
             deck.remove[card]
         else:
             dealer_hand_total = dealer_hand_total + card
-    
+    else:
+        dealer_bust()
+        
     return dealer_hand_total
     
 def who_won(dealer_hand_total, hand_total):
