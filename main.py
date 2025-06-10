@@ -124,8 +124,11 @@ def stand(hand_total):
 def double_down():
     pass
 
-def split():
-    pass
+def split(hand):
+    hand_1 = hand[0]
+    hand_2 = hand[1]
+    
+
 
 def player_bust():
     print("You busted!!! Dealer wins.")
