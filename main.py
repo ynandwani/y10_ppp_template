@@ -194,6 +194,7 @@ def clear_terminal():
 def start():
     play = input("Press Y to play. Otherwise, press N.").lower()
     if play == 'y':
+        questions = 0
         cards()
         deal_cards_start()
         count_cards()
