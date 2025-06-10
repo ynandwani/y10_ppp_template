@@ -48,11 +48,13 @@ def deal_cards_start(deck):
 
     return hand, card_1, card_2
 
-def dealer_deal_cards(hand):
+def dealer_deal_cards(hand, hand_total):
     deal_cards_start()
     dealer_hand = hand
     print(f"Dealer's first card is: {dealer_hand[0]}")
-    hand_total()
+    count_cards()
+    dealer_hand_total = hand_total
+    
 
 
 def count_cards(hand):
