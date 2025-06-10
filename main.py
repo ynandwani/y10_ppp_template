@@ -198,7 +198,7 @@ def start():
         dealer_deal_cards()
         hand_next()
         dealer_hit_or_stand()
-        dea
+        dealer
     else:
         print("See you next time!")
         sleep(3)
