@@ -54,7 +54,10 @@ def dealer_deal_cards(hand, hand_total):
     print(f"Dealer's first card is: {dealer_hand[0]}")
     count_cards()
     dealer_hand_total = hand_total
-    
+    if dealer_hand_total <= 17:
+        hit()
+    if dealer_hand_total > 17:
+        who_won()
 
 
 def count_cards(hand):
