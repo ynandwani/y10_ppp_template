@@ -99,7 +99,7 @@ def hit(hand_total, deck):
 
 def stand(hand_total):
     print(f"Your hand is: {hand_total}")
-    
+
 
 def double_down():
     pass
@@ -107,7 +107,7 @@ def double_down():
 def split():
     pass
 
-def print_cards():
+def dealer_deal_cards():
     pass
 
 def dealer_hit_or_stand():
