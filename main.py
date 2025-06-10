@@ -53,10 +53,19 @@ def count_cards(hand):
         hand -= 10
 
     print(f"Your total is: {hand_total}.")
+
+    if len(hand) == 2:
+        if hand[0] == hand[1]:
+            split = input("Do you want to split your hand?").lower()
+            if split == "yes":
+                split()
+            else:
+                hand_next()
+            
     return hand_total
 
 
-def hand_next(hand_total, card_1, card_2):
+def hand_next(hand_total):
     hit_or_stand = input(f"Your hand is: {hand_total}. Do you hit or stand?").lower()
     while hit_or_stand == 'hit':
             hit()
