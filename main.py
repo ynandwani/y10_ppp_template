@@ -134,9 +134,9 @@ def split(hand):
 def hand_1(hand_1,deck):
     print(f"Your hand is: {hand_1}")
 
-    if hand_1 < 22:
-        hit_or_stand = input(f"Your hand is: {hand_1}. Do you hit or stand?").lower()
-        while hit_or_stand == 'hit':
+    hit_or_stand = input(f"Your hand is: {hand_1}. Do you hit or stand?").lower()
+    while hit_or_stand == 'hit':
+        if hand_1 < 22:
             if card == 'king' or card == 'queen' or card == 'jack':
                 card_int = 10
                 hand_1 = hand_1 + card_int    
@@ -157,15 +157,15 @@ def hand_1(hand_1,deck):
             while hit_or_stand != 'hit' or  hit_or_stand != 'stand':
                 print("Please try again:")
                 hit_or_stand = input(f"Your hand is: {hand_1}. Do you hit or stand?").lower()
-                card = deck[randint(0, len(deck) - 1)]
+                card = deck[randint(0, len(deck) - 1)]    
 
         
         
 
         
-        return hit_or_stand 
-    else:
-        player_bust()
+            return hit_or_stand 
+        else:
+            player_bust()
     
 
 
