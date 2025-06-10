@@ -39,10 +39,10 @@ def deal_cards_start(deck):
         card_2 = 10
     elif card_2 =='ace':
         card_2 = 11
-        hand[0].append(deck[card_2])
+        hand[1].append(deck[card_2])
         deck.remove[card_2]
     else:
-        hand[0].append(deck[card_2])
+        hand[1].append(deck[card_2])
 
 
     print(f"Your hand is: {hand}")
