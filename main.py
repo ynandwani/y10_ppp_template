@@ -75,9 +75,7 @@ def hand_next(hand_total):
     while hit_or_stand != 'hit' or  hit_or_stand != 'stand':
         print("Please try again:")
         hit_or_stand = input(f"Your hand is: {hand_total}. Do you hit or stand?").lower()
-
-
-   
+    
     return hit_or_stand 
 
 def hit(hand_total, deck):
@@ -99,8 +97,9 @@ def hit(hand_total, deck):
     
     
 
-def stand():
-    pass
+def stand(hand_total):
+    print(f"Your hand is: {hand_total}")
+    
 
 def double_down():
     pass
