@@ -51,8 +51,8 @@ def deal_cards_start(deck):
 def dealer_deal_cards(hand):
     deal_cards_start()
     dealer_hand = hand
-    print(f"Dealer's first card is: {hand[0]}")
-
+    print(f"Dealer's first card is: {dealer_hand[0]}")
+    hand_total()
 
 
 def count_cards(hand):
@@ -120,8 +120,6 @@ def double_down():
 def split():
     pass
 
-def dealer_deal_cards():
-    pass
 
 def dealer_hit_or_stand():
     pass
