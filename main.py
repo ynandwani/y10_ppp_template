@@ -146,26 +146,23 @@ def hand_1(hand_1,deck):
                 else:
                     card_int = 11
                 hand_1 = hand_1 + card_int
-                hit_or_stand = input(f"Your hand is: {hand_1}. Do you hit or stand?").lower()
+                
             else:
                 hand_1 = hand_1 + card
 
             print(hand_1)
             deck.remove[card]
             hit_or_stand = input(f"Your hand is: {hand_1}. Do you hit or stand?").lower()
-            
-            while hit_or_stand != 'hit' or  hit_or_stand != 'stand':
-                print("Please try again:")
-                hit_or_stand = input(f"Your hand is: {hand_1}. Do you hit or stand?").lower()
-                card = deck[randint(0, len(deck) - 1)]    
-
-        
-        
-
-        
-            return hit_or_stand 
         else:
-            player_bust()
+            player_bust()    
+    else:
+        print("Please try again:")
+        hit_or_stand = input(f"Your hand is: {hand_1}. Do you hit or stand?").lower()
+        card = deck[randint(0, len(deck) - 1)]    
+
+        
+    return hit_or_stand 
+
     
 
 
