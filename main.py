@@ -131,11 +131,40 @@ def split(hand):
     hand_2 = hand[1]
     return hand_1, hand_2
 
-def hand_1(hand_1):
-    hand_total = hand_1
-    print(f"Your hand is: {hand_total}")
-    hit()
+def hand_1(hand_1,deck):
+    print(f"Your hand is: {hand_1}")
+
+    if hand_1 < 22:
+        hit_or_stand = input(f"Your hand is: {hand_total}. Do you hit or stand?").lower()
+        if hit_or_stand == 'hit':
+                hit()
+                hit_or_stand = input(f"Your hand is: {hand_total}. Do you hit or stand?").lower()
+        elif hit_or_stand == 'stand':
+            stand()
+        while hit_or_stand != 'hit' or  hit_or_stand != 'stand':
+            print("Please try again:")
+            hit_or_stand = input(f"Your hand is: {hand_total}. Do you hit or stand?").lower()
+            card = deck[randint(0, len(deck) - 1)]
+
+        if card == 11 and hand_total > 10:
+            card = 1
+        
+        hand_total = hand_total + card
+        if card == 'king' or card == 'queen' or card == 'jack':
+            card = 10
+        elif card =='ace':
+            card = 11
+            hand_total = hand_total + card
+            deck.remove[card]
+        else:
+            hand_total = hand_total + card
+        
+        hand_next()
+        return hit_or_stand 
+    else:
+        player_bust()
     
+
 
 def hand_2(hand_2):
     hand_total = hand_2
