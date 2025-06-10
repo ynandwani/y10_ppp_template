@@ -83,12 +83,12 @@ def count_cards(hand):
 
 
 def hand_next(hand_total):
-    while hand_total < 22:
+    if hand_total < 22:
         hit_or_stand = input(f"Your hand is: {hand_total}. Do you hit or stand?").lower()
-        while hit_or_stand == 'hit':
+        if hit_or_stand == 'hit':
                 hit()
                 hit_or_stand = input(f"Your hand is: {hand_total}. Do you hit or stand?").lower()
-        if hit_or_stand == 'stand':
+        elif hit_or_stand == 'stand':
             stand()
         while hit_or_stand != 'hit' or  hit_or_stand != 'stand':
             print("Please try again:")
