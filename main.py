@@ -54,10 +54,9 @@ def dealer_deal_cards(hand, hand_total):
     print(f"Dealer's first card is: {dealer_hand[0]}")
     count_cards()
     dealer_hand_total = hand_total
-    if dealer_hand_total <= 17:
-        hit()
-    if dealer_hand_total > 17:
-        who_won()
+    dealer_hit_or_stand()
+    
+    return dealer_hand_total
 
 
 def count_cards(hand):
@@ -83,18 +82,20 @@ def count_cards(hand):
 
 
 def hand_next(hand_total):
-    hit_or_stand = input(f"Your hand is: {hand_total}. Do you hit or stand?").lower()
-    while hit_or_stand == 'hit':
-            hit()
-            hit_or_stand = input(f"Your hand is: {hand_total}. Do you hit or stand?").lower()
-    if hit_or_stand == 'stand':
-        stand()
-    while hit_or_stand != 'hit' or  hit_or_stand != 'stand':
-        print("Please try again:")
+    while hand_total < 22:
         hit_or_stand = input(f"Your hand is: {hand_total}. Do you hit or stand?").lower()
-    
-    return hit_or_stand 
-
+        while hit_or_stand == 'hit':
+                hit()
+                hit_or_stand = input(f"Your hand is: {hand_total}. Do you hit or stand?").lower()
+        if hit_or_stand == 'stand':
+            stand()
+        while hit_or_stand != 'hit' or  hit_or_stand != 'stand':
+            print("Please try again:")
+            hit_or_stand = input(f"Your hand is: {hand_total}. Do you hit or stand?").lower()
+        
+        return hit_or_stand 
+    else:
+        who_won()
 def hit(hand_total, deck):
     card = deck[randint(0,len(deck) - 1)]
 
@@ -110,9 +111,10 @@ def hit(hand_total, deck):
         deck.remove[card]
     else:
         hand_total = hand_total + card
+    
     hand_next()
     
-    
+
 
 def stand(hand_total):
     print(f"Your hand is: {hand_total}")
@@ -126,13 +128,55 @@ def split():
     pass
 
 
-def dealer_hit_or_stand():
-    pass
+def dealer_hit_or_stand(dealer_hand_total):
+    if dealer_hand_total >= 17:
+        dealer_stand()
+    while dealer_hand_total < 17:
+        dealer_hit()
+
+def dealer_stand(dealer_hand_total):
+    print(f"Dealer's hand is: {dealer_hand_total}")
+    who_won()
+
+def dealer_hit(dealer_hand_total, deck):
+    card = deck[randint(0, len(deck) - 1)]
+
+    while dealer_hand_total < 22:
+        
+        if card == 'king' or card == 'queen' or card == 'jack':
+            card = 10
+            dealer_hand_total = dealer_hand_total + card
+            deck.remove[card]
+        elif card =='ace':
+            if dealer_hand_total > 10:
+                card = 1
+            if dealer_hand_total < 10:
+                card = 11
+            dealer_hand_total = dealer_hand_total + card
+            deck.remove[card]
+        else:
+            dealer_hand_total = dealer_hand_total + card
+    
+    return dealer_hand_total
+    
+def who_won(dealer_hand_total, hand_total):
+    dealer = 21 - dealer_hand_total
+    player = 21 - hand_total
+
+    if player < dealer:
+        print("Player won!")
+        start()
+    elif player > dealer:
+        print("Dealer won!")
+        start()
+    else:
+        print("Push!")
+        start()
+
 
 def start():
     cards()
-    deal_cards_start() 
-    count_cards()
-    hand_next()
-    #save
+    deal_cards_start()
+    
+    
  
