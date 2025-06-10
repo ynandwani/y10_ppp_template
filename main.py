@@ -136,11 +136,18 @@ def hand_1(hand_1,deck):
 
     if hand_1 < 22:
         hit_or_stand = input(f"Your hand is: {hand_total}. Do you hit or stand?").lower()
-        if hit_or_stand == 'hit':
-                hit()
-                hit_or_stand = input(f"Your hand is: {hand_total}. Do you hit or stand?").lower()
-        elif hit_or_stand == 'stand':
-            stand()
+        while hit_or_stand == 'hit':
+            hand_1 = hand_1 + card
+            if card == 'king' or card == 'queen' or card == 'jack':
+                card = 10
+            elif card =='ace':
+                card = 11
+                hand_1 = hand_1 + card
+                deck.remove[card]
+            else:
+                hand_1 = hand_1 + card
+            hit_or_stand = input(f"Your hand is: {hand_total}. Do you hit or stand?").lower()
+            
         while hit_or_stand != 'hit' or  hit_or_stand != 'stand':
             print("Please try again:")
             hit_or_stand = input(f"Your hand is: {hand_total}. Do you hit or stand?").lower()
