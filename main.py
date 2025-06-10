@@ -127,8 +127,11 @@ def double_down():
 def split(hand):
     hand_1 = hand[0]
     hand_2 = hand[1]
-    
+    return hand_1, hand_2
 
+def hand_1(hand_1):
+    print(f"Your hand is: {hand_1}")
+    hit()
 
 def player_bust():
     print("You busted!!! Dealer wins.")
