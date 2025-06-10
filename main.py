@@ -40,7 +40,8 @@ def deal_cards_start(deck):
 
 
     print(f"Your hand is: {hand}")
-    return hand
+
+    return hand, card_1, card_2
 
 def count_cards(hand):
     hand_total = 0
@@ -55,7 +56,7 @@ def count_cards(hand):
     return hand_total
 
 
-def hand_next(hand_total):
+def hand_next(hand_total, card_1, card_2):
     hit_or_stand = input(f"Your hand is: {hand_total}. Do you hit or stand?").lower()
     while hit_or_stand == 'hit':
             hit()
@@ -65,6 +66,13 @@ def hand_next(hand_total):
     while hit_or_stand != 'hit' or  hit_or_stand != 'stand':
         print("Please try again:")
         hit_or_stand = input(f"Your hand is: {hand_total}. Do you hit or stand?").lower()
+    if card_1 == card_2:
+        split = input("Do you want to split your hand?").lower()
+        if split == "yes":
+            split()
+        elif split == "no":
+            hit_or_stand = input(f"Your hand is: {hand_total}. Do you hit or stand?").lower()
+
    
     return hit_or_stand 
 
@@ -83,6 +91,7 @@ def hit(hand_total, deck):
         deck.remove[card]
     else:
         hand_total = hand_total + card
+    hand_next()
     
     
 
