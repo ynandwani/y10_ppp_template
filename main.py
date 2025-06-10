@@ -98,7 +98,7 @@ def hand_next(hand_total):
     else:
         player_bust()
 def hit(hand_total, deck):
-    card = deck[randint(0,len(deck) - 1)]
+    card = deck[randint(0, len(deck) - 1)]
 
     if card == 11 and hand_total > 10:
         card = 1
