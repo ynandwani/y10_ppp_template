@@ -66,12 +66,7 @@ def hand_next(hand_total, card_1, card_2):
     while hit_or_stand != 'hit' or  hit_or_stand != 'stand':
         print("Please try again:")
         hit_or_stand = input(f"Your hand is: {hand_total}. Do you hit or stand?").lower()
-    if card_1 == card_2:
-        split = input("Do you want to split your hand?").lower()
-        if split == "yes":
-            split()
-        elif split == "no":
-            hit_or_stand = input(f"Your hand is: {hand_total}. Do you hit or stand?").lower()
+
 
    
     return hit_or_stand 
