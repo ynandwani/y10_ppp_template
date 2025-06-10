@@ -75,11 +75,13 @@ def count_cards(hand):
         if hand[0] == hand[1]:
             split = input("Do you want to split your hand?").lower()
             if split == "yes":
+                hand = [[hand(0)][hand(1)]]
+                
                 split()
             else:
                 hand_next()
-            
-    return hand_total
+        
+    return hand_total, hand
 
 
 def hand_next(hand_total):
