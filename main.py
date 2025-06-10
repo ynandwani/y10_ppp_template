@@ -149,17 +149,8 @@ def hand_1(hand_1,deck):
         if card == 11 and hand_total > 10:
             card = 1
         
-        hand_total = hand_total + card
-        if card == 'king' or card == 'queen' or card == 'jack':
-            card = 10
-        elif card =='ace':
-            card = 11
-            hand_total = hand_total + card
-            deck.remove[card]
-        else:
-            hand_total = hand_total + card
+
         
-        hand_next()
         return hit_or_stand 
     else:
         player_bust()
