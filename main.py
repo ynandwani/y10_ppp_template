@@ -9,7 +9,7 @@ index = 0
 for i in range(len(welcome)):
     print(welcome[index])
     index += 1
-    sleep(0.2)
+    sleep(0.1)
 
 def cards():
     deck = []
@@ -276,7 +276,13 @@ def who_won(dealer_hand_total, hand_total):
 def who_won_split(hand_1, hand_2, hand_total):
     if hand_1 > hand_2:
         hand_total = hand_1
-        
+    else:
+        hand_total = hand_2
+    
+    print(f"Your hand is {hand_total}")
+    who_won()
+
+    return hand_total
     pass # to do, find who won split with both hands, only one hand can win from the player so find which is closest to Blackjack 
 
 def clear_terminal():
@@ -303,4 +309,5 @@ def start():
         clear_terminal()
     
     
- 
+if __name__ == "__main__":
+    start()
