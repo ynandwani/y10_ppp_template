@@ -17,8 +17,10 @@ def cards():
         for i in range(10):
             deck.append(i + 1)
     for i in range(4):
-        deck.append('king','queen','jack','ace')
-    
+        deck.append('king')
+        deck.append('queen')
+        deck.append('jack')
+        deck.append('ace')
     return deck
 
 def deal_cards_start(deck):
