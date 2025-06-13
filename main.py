@@ -295,7 +295,7 @@ def clear_terminal():
     else:
         os.system('clear')
 
-def start():
+def start(deck):
     play = input("Press Y to play. Otherwise, press N.").lower()
     if play == 'y':
         questions = 0
