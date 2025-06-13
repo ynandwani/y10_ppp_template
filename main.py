@@ -26,8 +26,8 @@ def cards():
 
 def deal_cards_start(deck):
     hand = [[]]
-    card_1 = randint[(0,(len(deck) - 1))]
-    card_2 = randint[(0,(len(deck) - 1))]
+    card_1 = randint(0,(len(deck) - 1))
+    card_2 = randint(0,(len(deck) - 1))
     card_1 = deck[card_1]
     deck.remove(card_1)
     card_2 = deck[card_2]
@@ -316,5 +316,5 @@ def start(deck):
     
     
 if __name__ == "__main__":
-    deck =[]
+    deck = []
     start(deck)
