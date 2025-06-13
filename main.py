@@ -21,6 +21,7 @@ def cards():
         deck.append('queen')
         deck.append('jack')
         deck.append('ace')
+        print(deck)
     return deck
 
 def deal_cards_start(deck):
