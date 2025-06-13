@@ -273,7 +273,10 @@ def who_won(dealer_hand_total, hand_total):
         print("Push!")
         start()
 
-def who_won_split():
+def who_won_split(hand_1, hand_2, hand_total):
+    if hand_1 > hand_2:
+        hand_total = hand_1
+        
     pass # to do, find who won split with both hands, only one hand can win from the player so find which is closest to Blackjack 
 
 def clear_terminal():
