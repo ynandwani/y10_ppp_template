@@ -170,15 +170,51 @@ def hand_1(hand_1,deck):
         hit_or_stand = input(f"Your hand is: {hand_1}. Do you hit or stand?").lower()
         card = deck[randint(0, len(deck) - 1)]    
 
-    who_won_split()
+    hand_2()
     
     return hit_or_stand 
 
     
-def hand_2(hand_2):
-    hand_total = hand_2
-    print(f"Your hand is: {hand_total}")
-    hit()
+def hand_2(hand_2, deck):
+    print(f"Your hand is: {hand_1}")
+
+    hit_or_stand = input(f"Your hand is: {hand_1}. Do you hit or stand?").lower()
+
+    while hit_or_stand == 'hit':
+        if hand_2 > 22:
+            player_bust()
+        else:
+            if card == 'king' or card == 'queen' or card == 'jack':
+                card_int = 10
+                hand_2 = hand_2 + card_int    
+            elif card =='ace':
+                if hand_2 > 10:
+                    card_int = 1
+                else:
+                    card_int = 11
+                hand_2 = hand_2 + card_int
+                
+            else:
+                hand_2 = hand_2 + card
+
+            print(hand_2)
+            deck.remove[card]
+            hit_or_stand = input(f"Your hand is: {hand_2}. Do you hit or stand?").lower()
+
+        
+    while hit_or_stand == 'stand':
+        if hand_2 > 22:
+            player_bust()
+        else: 
+            print(f"Your hand is: {hand_2}")
+          
+
+    else:
+        print("Please try again:")
+        hit_or_stand = input(f"Your hand is: {hand_2}. Do you hit or stand?").lower()
+        card = deck[randint(0, len(deck) - 1)]    
+
+    who_won_split()
 
 def player_bust():
     print("You busted!!! Dealer wins.")
