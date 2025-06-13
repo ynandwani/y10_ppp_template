@@ -28,7 +28,7 @@ def deal_cards_start(deck):
     hand = [[]]
     card_1 = ''
     card_2 = ''
-    card_1 = randint[(0,len(deck) - 1)]
+    card_1 = randint[(0,(len(deck) - 1))]
     if card_1 == 'king' or card_1 == 'queen' or card_1 == 'jack':
         card_1 = 10
     elif card_1 =='ace':
