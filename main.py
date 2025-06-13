@@ -49,7 +49,7 @@ def deal_cards_start(deck):
 
     print(f"Your hand is: {hand}")
 
-    return hand, card_1, card_2
+    return hand, card_1, card_2, deck
 
 def dealer_deal_cards(hand, hand_total):
     deal_cards_start()
@@ -299,7 +299,7 @@ def start():
     if play == 'y':
         questions = 0
         cards()
-        deal_cards_start()
+        deal_cards_start(deck)
         count_cards()
         dealer_deal_cards()
         hand_next()
