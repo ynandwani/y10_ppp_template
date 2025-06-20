@@ -304,8 +304,8 @@ def start(deck):
     if play == 'y':
         questions = 0
         deck = cards() # cards is not a procedure. it is a function. why are you using it like a procedure?
-        deal_cards_start(deck)
-        count_cards()
+        hand = deal_cards_start(deck)
+        count_cards(hand)
         dealer_deal_cards()
         hand_next()
         dealer_hit_or_stand()
