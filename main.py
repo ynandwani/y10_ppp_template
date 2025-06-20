@@ -73,8 +73,7 @@ def count_cards(hand):
     index = 0
     print(hand[index])
     for i in range(len(hand) - 1):
-            hand_total += hand[index]
-            index += 1
+        index += 1
     if 11 in hand and hand_total > 10:
         hand -= 10
 
