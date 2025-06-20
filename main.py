@@ -25,15 +25,15 @@ def cards():
     return deck
 
 def deal_cards_start(deck):
-    hand = []
+    hand = [[],[]]
     card_1 = randint(0,(len(deck) - 1))
     card_2 = randint(0,(len(deck) - 1))
     card_1 = deck[card_1]
     deck.remove(card_1)
 
     card_2 = deck[card_2]
-    hand.append(card_2)
     deck.remove(card_2)
+
     if card_1 == 'king' or card_1 == 'queen' or card_1 == 'jack':
         card_1 = 10
     elif card_1 =='ace':
@@ -43,8 +43,8 @@ def deal_cards_start(deck):
     else:
         hand[0] = card_1
 
-    hand.append(card_1)
     
+
     if card_2 == 'king' or card_2 == 'queen' or card_2 == 'jack':
         card_2 = 10
     elif card_2 =='ace':
