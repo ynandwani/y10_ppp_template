@@ -32,6 +32,7 @@ def deal_cards_start(deck):
     hand.append(card_1)
     deck.remove(card_1)
     card_2 = deck[card_2]
+    hand.append(card_2)
     deck.remove(card_2)
     if card_1 == 'king' or card_1 == 'queen' or card_1 == 'jack':
         card_1 = 10
