@@ -86,8 +86,8 @@ def count_cards(hand):
                 hand = [[hand(0)][hand(1)]]
                 
                 split()
-            else:
-                hand_next()
+    else:
+        hand_next()
         
     return hand_total, hand
 
