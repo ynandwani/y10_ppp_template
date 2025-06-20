@@ -29,8 +29,8 @@ def deal_cards_start(deck):
     card_1 = randint(0,(len(deck) - 1))
     card_2 = randint(0,(len(deck) - 1))
     card_1 = deck[card_1]
-    hand.append(card_1)
     deck.remove(card_1)
+
     card_2 = deck[card_2]
     hand.append(card_2)
     deck.remove(card_2)
@@ -42,6 +42,8 @@ def deal_cards_start(deck):
         
     else:
         hand[0] = card_1
+
+    hand.append(card_1)
     
     if card_2 == 'king' or card_2 == 'queen' or card_2 == 'jack':
         card_2 = 10
@@ -71,7 +73,7 @@ def dealer_deal_cards(hand, hand_total):
 def count_cards(hand):
     hand_total = 0
     index = 0
-    for i in range(len(hand) - 1):
+    for i in range(len(hand)):
             hand_total += hand[index]
             index += 1
     if 11 in hand and hand_total > 10:
