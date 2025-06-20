@@ -25,7 +25,7 @@ def cards():
     return deck
 
 def deal_cards_start(deck):
-    hand = [[],[]]
+    hand = []
     card_1 = randint(0,(len(deck) - 1))
     card_2 = randint(0,(len(deck) - 1))
     card_1 = deck[card_1]
