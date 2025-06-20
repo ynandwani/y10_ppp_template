@@ -74,10 +74,10 @@ def count_cards(hand):
     hand_total = 0
     index = 0
     for i in range(len(hand)):
-            hand_total += hand[index]
+            hand_total += int(hand[index])
             index += 1
     if 11 in hand and hand_total > 10:
-        hand -= 10
+        hand_total -= 10
 
     print(f"Your total is: {hand_total}.")
 
