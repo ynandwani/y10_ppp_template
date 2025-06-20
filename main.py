@@ -71,8 +71,9 @@ def dealer_deal_cards(hand, hand_total):
 def count_cards(hand):
     hand_total = 0
     index = 0
+    print(hand[index])
     for i in range(len(hand) - 1):
-            hand_total += int(hand[index])
+            hand_total += hand[index]
             index += 1
     if 11 in hand and hand_total > 10:
         hand -= 10
