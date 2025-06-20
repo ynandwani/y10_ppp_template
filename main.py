@@ -49,7 +49,7 @@ def deal_cards_start(deck):
         hand[1].append(card_2)
         
     else:
-        hand[1].append(card_2)
+        hand.append(card_2)
 
 
     print(f"Your hand is: {hand}")
