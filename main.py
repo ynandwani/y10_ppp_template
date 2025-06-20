@@ -29,6 +29,7 @@ def deal_cards_start(deck):
     card_1 = randint(0,(len(deck) - 1))
     card_2 = randint(0,(len(deck) - 1))
     card_1 = deck[card_1]
+    hand.append(card_1)
     deck.remove(card_1)
     card_2 = deck[card_2]
     deck.remove(card_2)
