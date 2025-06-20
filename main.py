@@ -72,7 +72,7 @@ def dealer_deal_cards(hand, hand_total):
 
 def count_cards(hand):
     hand_total = 0
-    index = -1
+    index = 0
     print(hand[index])
     for i in range(len(hand)):
             hand_total = hand_total + hand[index]
