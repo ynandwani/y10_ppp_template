@@ -2,6 +2,7 @@ from random import randint
 import random
 import os
 from time import sleep
+from sympy import Symbol, solve
 
 welcome_message = "Welcome to Blackjack! "
 i = 0
@@ -98,7 +99,7 @@ def who_won(dealer_hand_total, hand_total):
         print("You win!")
     elif hand_total < dealer_hand_total:
         print("Dealer wins!")
-        question()
+        #question()
     else:
         print("It's a tie.")
 
@@ -109,18 +110,28 @@ def who_won(dealer_hand_total, hand_total):
     else:
         print("Ok, bye!")
 
-def question():
-    directory = "C:\Users\ynandwani\OneDrive - Kellett School\PPP MATHS REVISION QUESTIONS FOR BLACKJACK"
-    #list the files
-    files = [f for f in os.listdir(directory)]
-    random_file = random.choice(files)
-    file_path = os.path.join(directory, random_file)
+#def question():
+    #directory = r"C:\Users\ynandwani\OneDrive - Kellett School\PPP MATHS REVISION QUESTIONS FOR BLACKJACK"
+    ##list the files
+    #files = [f for f in os.listdir(directory)]
+    #random_file = random.choice(files)
+    #file_path = os.path.join(directory, random_file)
     
     # Open the random file
-    with open(file_path, 'r') as file:
-        content = file.read()
-        print(f"Contents of {random_file}:\n")
-        print(content)
+    #with open(file_path, 'r') as file:
+        #content = file.read()
+        #print(f"Contents of {random_file}:\n")
+        #ans = input(f"SOLVE: {content}")
+        #solution = solve(content)
+
+    #while ans != solution:
+        #print("Try again.")
+        #ans = input(f"SOLVE: {content}")
+        #give_answer = input("If you cannot solve it, press X to get the answer.").lower()
+        #if give_answer == 'x':
+            #print(f"The solution is: {solution}")
+    #print("Great job!")
+
 
 def start():
 
