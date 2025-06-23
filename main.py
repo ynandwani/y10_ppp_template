@@ -140,7 +140,7 @@ def start():
     dealer_hand = []
 
     player_total = count_cards(player_hand, "You")
-    
+    dealer_total = 0
     while player_total <= 21:
         action = input("Do you want to hit, stand, double, or split? (hit/stand/double/split)").lower()
         if action == 'hit':
