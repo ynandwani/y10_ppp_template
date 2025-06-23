@@ -111,6 +111,7 @@ def who_won(dealer_hand_total, hand_total):
         print("Ok, bye!")
 
 def question():
+    #This part was found on Google:
     directory = r"C:\Users\ynandwani\OneDrive - Kellett School\PPP MATHS REVISION QUESTIONS FOR BLACKJACK"
     #list the files
     files = [f for f in os.listdir(directory)]
@@ -121,6 +122,7 @@ def question():
     with open(file_path, 'r') as file:
         content = file.read()
         print(f"Contents of {random_file}:\n")
+    #back to original code
         ans = input(f"SOLVE: {content}")
         solution = solve(content)
 
