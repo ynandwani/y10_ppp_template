@@ -110,7 +110,8 @@ def who_won(dealer_hand_total, hand_total):
         print("Ok, bye!")
 
 def question():
-    directory = ""
+    directory = "C:\Users\ynandwani\OneDrive - Kellett School\PPP MATHS REVISION QUESTIONS FOR BLACKJACK"
+    #list the files
     files = [f for f in os.listdir(directory)]
     random_file = random.choice(files)
     file_path = os.path.join(directory, random_file)
