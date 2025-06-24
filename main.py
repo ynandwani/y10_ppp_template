@@ -112,7 +112,7 @@ def who_won(dealer_hand_total, hand_total):
 
 def question():
     #This part was found on Google:
-    directory = r"C:\Users\ynandwani\OneDrive - Kellett School\PPP MATHS REVISION QUESTIONS FOR BLACKJACK"
+    directory = input("Paste your directory here")
     #list the files
     files = [f for f in os.listdir(directory)]
     random_file = random.choice(files)
