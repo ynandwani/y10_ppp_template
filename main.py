@@ -5,12 +5,13 @@ from time import sleep
 from sympy import Symbol, solve
 
 welcome_message = "Welcome to Blackjack! "
+points = 0
 i = 0
+
 for i in range(len(welcome_message)):
-    print(welcome_message[i], end = ' ') 
+    print(welcome_message[i], end = '') 
     i += 1
     sleep(0.1)
-print('\n')
 
 def clear_terminal():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -56,7 +57,7 @@ def hit(hand, deck, player):
     print(f"{player} drew: {card}")
     return hand, deck
 
-def stand(hand_total):
+def stand(hand_total, question_amount):
     return hand_total
 
 def double_down(hand, deck, player):
@@ -69,6 +70,7 @@ def double_down(hand, deck, player):
 
     hand.append(card)
     print(f"{player} doubled down and drew: {card}")
+    question_amount += 1
     return hand, deck
 
 def split_hand(hand, deck, player):
@@ -89,14 +91,16 @@ def player_bust():
 def dealer_bust():
     print("Dealer busted! You win.")
 
-def who_won(dealer_hand_total, hand_total):
+def who_won(dealer_hand_total, hand_total, points):
     if hand_total > 21:
         print("You busted! Dealer wins.")
         question()
     elif dealer_hand_total > 21:
         print("Dealer busted! You win.")
+        points += 1
     elif hand_total > dealer_hand_total:
         print("You win!")
+        points += 1
     elif hand_total < dealer_hand_total:
         print("Dealer wins!")
         question()
@@ -108,31 +112,34 @@ def who_won(dealer_hand_total, hand_total):
         clear_terminal()
         start()
     else:
+        print(f"You scored: {points} points")
         print("Ok, bye!")
 
-def question():
+
+def question(question_amount, points):
     #This part was found on Google:
     directory = input("Paste your directory here")
     #list the files
     files = [f for f in os.listdir(directory)]
     random_file = random.choice(files)
     file_path = os.path.join(directory, random_file)
-    
-    #Open the random file
-    with open(file_path, 'r') as file:
-        content = file.read()
-        print(f"Contents of {random_file}:\n")
-    #back to original code
-        ans = input(f"SOLVE: {content}")
-        solution = solve(content)
+    for i in range(question_amount):
+        #Open the random file
+        with open(file_path, 'r') as file:
+            content = file.read()
+            print(f"Contents of {random_file}:\n")
+        #back to original code
+            ans = input(f"SOLVE: {content}")
+            solution = solve(content)
 
-    while ans != solution:
-        print("Try again.")
-        ans = input(f"SOLVE: {content}")
-        give_answer = input("If you cannot solve it, press X to get the answer.").lower()
-        if give_answer == 'x':
-            print(f"The solution is: {solution}")
+        while ans != solution:
+            print("Try again.")
+            ans = input(f"SOLVE: {content}")
+            give_answer = input("If you cannot solve it, press X to get the answer.").lower()
+            if give_answer == 'x':
+                print(f"The solution is: {solution}")
     print("Great job!")
+    points += 1
 
 
 def start():
@@ -140,6 +147,7 @@ def start():
     deck = cards()
     player_hand, deck = deal_cards_start(deck)
     dealer_hand = []
+    question_amount = 0
 
     player_total = count_cards(player_hand, "You")
     dealer_total = 0
@@ -185,7 +193,7 @@ def start():
             if dealer_total > 21:
                 break
 
-    who_won(dealer_total, player_total)
+    who_won(dealer_total, player_total, points)
 
 if __name__ == "__main__":
     start()
